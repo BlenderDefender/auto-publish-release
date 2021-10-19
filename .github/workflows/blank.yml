@@ -30,3 +30,4 @@ jobs:
         if: ${{ contains('test', 't') }}
         run: |
           echo ${{ github.event.push.commits[0].commit.message }}
+          echo ${{ contains('test', 't') }}
