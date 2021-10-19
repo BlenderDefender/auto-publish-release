@@ -1,5 +1,7 @@
 import argparse
 
+import sys
+
 import os
 from os import path as p
 
@@ -12,6 +14,7 @@ args = parser.parse_args()
 commit_message = args.commit_message
 version_raw = commit_message.split("#RELEASE")[1]
 version = version_raw.replace(".", "_")
+sys.stdout.write(version)
 
 # Create a README, if it doesn't exist already.
 if not "README.md" in os.listdir():
@@ -41,4 +44,4 @@ with open("CHANGELOG.md", "w+") as f:
   
 print(final_text)
 
-os._exit(version)
+# os._exit(version)
