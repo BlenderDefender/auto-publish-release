@@ -6,7 +6,7 @@ if not "README.md" in os.listdir():
     f.write("<!-- CHANGELOG -->\n\n<!-- CHANGELOG -->")
   exit()
   
- with open ("README.md", "r") as f:
+with open ("README.md", "r") as f:
   text = f.read()
 
 
