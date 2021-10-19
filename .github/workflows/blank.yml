@@ -29,4 +29,4 @@ jobs:
       - name: Run a multi-line script
         if: ${{ contains('test', 't') }}
         run: |
-          echo test
+          echo ${{ github.event.push }}
