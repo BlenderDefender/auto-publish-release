@@ -27,4 +27,4 @@ jobs:
         run: |
           echo ${{ github.event.head_commit.message }}
           ls
-      # python publish_release
+          python /.github/workflows/publish_release.py
