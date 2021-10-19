@@ -10,7 +10,7 @@ args = parser.parse_args()
 
 # Extract the version from the commit message.
 commit_message = args.commit_message
-version_raw = commit_message.split("#RELEASE") # [1]
+version_raw = commit_message.split("#RELEASE")[1]
 print(version_raw)
 # version = version_raw.replace(".", "_")
 
