@@ -3,6 +3,7 @@ import argparse
 import os
 from os import path as p
 
+# Process commit message.
 parser = argparse.ArgumentParser()
 parser.add_argument("--commit_message")
 args = parser.parse_args()
