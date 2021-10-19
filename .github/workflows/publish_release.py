@@ -10,8 +10,9 @@ args = parser.parse_args()
 
 # Extract the version from the commit message.
 commit_message = args.commit_message
-version_raw = commit_message.split("#RELEASE")[1]
-version = version_raw.replace(".", "_")
+version_raw = commit_message.split("#RELEASE") # [1]
+print(version_raw)
+# version = version_raw.replace(".", "_")
 
 # Create a README, if it doesn't exist already.
 if not "README.md" in os.listdir():
