@@ -42,6 +42,3 @@ final_text = f"""## Version {version_raw}
 with open("CHANGELOG.md", "w+") as f:
   f.write(final_text)
   
-print(final_text)
-
-# os._exit(version)
