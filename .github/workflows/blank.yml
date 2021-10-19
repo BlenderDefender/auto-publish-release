@@ -25,6 +25,8 @@ jobs:
       - name: Run a multi-line script
         if: ${{ contains(github.event.head_commit.message, '#RELEASE') }}
         run: |
+          message=${{ github.event.head_commit.message }}
           echo ${{ github.event.head_commit.message }}
+          echo $message
           ls
           python ./.github/workflows/publish_release.py --commit_message github.event.head_commit.message
