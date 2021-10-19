@@ -19,6 +19,7 @@ if not "README.md" in os.listdir():
     f.write("<!-- CHANGELOG -->\n\n<!-- CHANGELOG -->")
   exit()
   
+# Get the content of the README file.
 with open("README.md", "r") as f:
   text = f.read()
 
