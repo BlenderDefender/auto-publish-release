@@ -29,6 +29,6 @@ jobs:
       - name: Run a multi-line script
         if: ${{ contains('test', 't') }}
         run: |
-          echo ${{ github.event.head_commit.url }}
+          echo ${{ github.event.head_commit.message }}
           echo ${{ github.event.ref }}
           echo ${{ contains('test', 't') }}
