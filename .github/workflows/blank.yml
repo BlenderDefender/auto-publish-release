@@ -30,5 +30,3 @@ jobs:
         if: ${{ contains(github.event.head_commit.message, '#RELEASE') }}
         run: |
           echo ${{ github.event.head_commit.message }}
-          echo ${{ github.event.ref }}
-          echo ${{ contains('test', 't') }}
