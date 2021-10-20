@@ -29,9 +29,9 @@ jobs:
       - name: Run a multi-line script
         run: |
           message=${{ github.event.head_commit.message }}
-          echo $message
+
           operation_output=$(python ./.github/workflows/publish_release.py --commit_message $message)
-          echo $operation_output
+
           VERSION=$(cut -d'|' -f1 <<<"$operation_output")
           RELEASE_DESC=$(cut -d'|' -f2 <<<"$operation_output")
           echo $VERSION
