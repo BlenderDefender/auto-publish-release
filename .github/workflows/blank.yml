@@ -30,7 +30,8 @@ jobs:
         run: |
           message=${{ github.event.head_commit.message }}
           
-          python ./.github/workflows/get_release_description.py
+          RELEASE_DESCRIPTION=$(python ./.github/workflows/get_release_description.py)
+          echo $RELEASE_DESCRIPTION
 
           VERSION=$(python ./.github/workflows/publish_release.py --commit_message $message)
           echo $VERSION
