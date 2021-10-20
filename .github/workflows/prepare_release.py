@@ -23,10 +23,15 @@ if not "README.md" in os.listdir():
 # Get the content of the README file.
 with open("README.md", "r") as f:
   text = f.read()
+text = text.split("<!-- CHANGELOG -->")
+
+# Update the README file.
+with open("README.md", "w+") as f:
+  f.write(f"{text[0]}\nWe've just hit another update. No features are planned so far. [Change this!](https://github.com/BlenderDefender/blender_pm/issues/new/choose)\n<!-- CHANGELOG -->\n\n<!-- CHANGELOG -->{text[2}}")
 
 # Compose the changelog text.
 changelog_text = f"""## Version {version_raw}
-{text.split("<!-- CHANGELOG -->")[1]}"""
+{text[1]}"""
 
 prev_text = ""
 if "CHANGELOG.md" in os.listdir():
