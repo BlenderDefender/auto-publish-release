@@ -30,7 +30,8 @@ text = text.split("<!-- CHANGELOG -->")
 # Generate an issue notice text, if configured.
 issue_notice_text = ""
 if args.include_issue_notice:
-  issue_notice_text = f"\nWe've just hit another update. No features are planned so far. [Change this!]({args.repo_url})"
+  issue_url = f"https://github.com/{args.repo_url}/issues/new/choose"
+  issue_notice_text = f"\nWe've just hit another update. No features are planned so far. [Change this!]({issue_url})"
 
 # Update the README file.
 with open("README.md", "w+") as f:
