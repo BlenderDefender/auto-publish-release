@@ -3,6 +3,6 @@ gh-actions test
 
 ## Upcoming Version:
 <!-- CHANGELOG -->
-- Test
-- Hello
+- Feature: Test
+- Fix: Hello
 <!-- CHANGELOG -->
