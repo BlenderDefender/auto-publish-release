@@ -25,7 +25,7 @@ for key in data.keys():
         feature_type = key
         if data[key] == 1:
             # Get the singular form of the feature type.
-            feature_type = key.removesuffix("s")
+            feature_type = key[:-1]
 
             # Special case: Fixes are called "Fix" in singular.
             if feature_type == "Fixe":
