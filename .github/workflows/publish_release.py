@@ -5,6 +5,8 @@ import sys
 import os
 from os import path as p
 
+DELIMITER = "|"
+
 # Process commit message.
 parser = argparse.ArgumentParser()
 parser.add_argument("--commit_message")
@@ -14,8 +16,9 @@ args = parser.parse_args()
 commit_message = args.commit_message
 version_raw = commit_message.split("#RELEASE")[1]
 version = version_raw.replace(".", "_")
+sys.stdout.write(DELIMITER)
 sys.stdout.write(version)
-sys.stdout.write("|")
+sys.stdout.write(DELIMITER)
 
 # Create a README, if it doesn't exist already.
 if not "README.md" in os.listdir():
@@ -27,7 +30,8 @@ if not "README.md" in os.listdir():
 with open("README.md", "r") as f:
   text = f.read()
 
-changelog_text = text.split("<!-- CHANGELOG -->")[1]
+changelog_text = f"""## Version {version_raw}
+{text.split("<!-- CHANGELOG -->")[1]}"""
 sys.stdout.write(changelog_text)
 
 prev_text = ""
@@ -35,8 +39,7 @@ if "CHANGELOG.md" in os.listdir():
   with open("CHANGELOG.md", "r") as f:
     prev_text = f.read()
 
-final_text = f"""## Version {version_raw}
-{changelog_text}
+final_text = f"""{changelog_text}
 
 {prev_text}
 """
