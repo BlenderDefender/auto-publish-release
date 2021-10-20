@@ -72,4 +72,10 @@ jobs:
          asset_name: ${{ steps.create_package.outputs.ZIP }}
          asset_content_type: application/zip
 
+      - name: Publish Release 🥳
+        uses: eregon/publish-release@v1
+        env:
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+         release_id: ${{ steps.draft_release.outputs.id }}
 
