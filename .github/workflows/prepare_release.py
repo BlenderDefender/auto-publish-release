@@ -6,6 +6,8 @@ from os import path as p
 # Process commit message.
 parser = argparse.ArgumentParser()
 parser.add_argument("--commit_message")
+parser.add_argument("--repo_url")
+parser.add_argument("--include_issue_notice")
 args = parser.parse_args()
 
 # Extract the version from the commit message.
@@ -25,9 +27,14 @@ with open("README.md", "r") as f:
   text = f.read()
 text = text.split("<!-- CHANGELOG -->")
 
+# Generate an issue notice text, if configured.
+issue_notice_text = ""
+if args.include_issue_notice:
+  issue_notice_text = f"\nWe've just hit another update. No features are planned so far. [Change this!]({args.repo_url})"
+
 # Update the README file.
 with open("README.md", "w+") as f:
-  f.write(text[0]+"\nWe've just hit another update. No features are planned so far. [Change this!](https://github.com/BlenderDefender/blender_pm/issues/new/choose)\n<!-- CHANGELOG -->\n\n<!-- CHANGELOG -->" + text[2])
+  f.write(f"{text[0]}{issue_notice_text}\n<!-- CHANGELOG -->\n\n<!-- CHANGELOG -->{text[2]}")
 
 # Compose the changelog text.
 changelog_text = f"""## Version {version_raw}
