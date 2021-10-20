@@ -35,5 +35,5 @@ jobs:
           VERSION=$(cut -d'|' -f2 <<<"$operation_output")
           RELEASE_DESC=$(cut -d'|' -f3 <<<"$operation_output")
           echo $VERSION
-          echo $RELEASE_DESC
-          echo "test\nasdf"
+        # echo $RELEASE_DESC
+        # echo "test\nasdf"
