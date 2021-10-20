@@ -34,4 +34,4 @@ for key in data.keys():
         # Compose the output.
         output += f"{data[key]} {feature_type}, "
 
-print(f"{output[-2]}:\n{content}")
+print(f"{output[:-2]}:\n{content}")
