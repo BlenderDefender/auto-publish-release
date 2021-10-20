@@ -32,3 +32,7 @@ jobs:
           echo $message
           operation_output=$(python ./.github/workflows/publish_release.py --commit_message $message)
           echo $operation_output
+          VERSION=$(cut -d'DELIMITER' -f1 <<<"$operation_output")
+          RELEASE_DESC=$(cut -d'DELIMITER' -f2 <<<"$operation_output")
+          echo $VERSION
+          echo $RELEASE_DESC
