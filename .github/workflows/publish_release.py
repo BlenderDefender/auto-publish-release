@@ -15,7 +15,7 @@ commit_message = args.commit_message
 version_raw = commit_message.split("#RELEASE")[1]
 version = version_raw.replace(".", "_")
 sys.stdout.write(version)
-sys.stdout.write("DELIMITER")
+sys.stdout.write("|")
 
 # Create a README, if it doesn't exist already.
 if not "README.md" in os.listdir():
