@@ -13,9 +13,9 @@ content = text.split("<!-- CHANGELOG -->")[1]
 
 # Count, which types of features have been added and how often.
 data = {
-    "Fixes": len(content.split("- Fix")) - 1,
     "Features": len(content.split("- Feature")) - 1,
     "Improvements": len(content.split("- Improvement")) - 1,
+    "Fixes": len(content.split("- Fix")) - 1,
 }
 
 output = "This release comes with "
