@@ -1,3 +1,9 @@
+## Version 0.1.0
+
+- Feature: Test
+- Fix: Hello
+
+
 ## Version 0.0.8
 
 - Feature: Test
@@ -50,6 +56,7 @@
 
 - Feature: Test
 - Fix: Hello
+
 
 
 
