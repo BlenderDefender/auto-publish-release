@@ -1,13 +1,10 @@
 # auto-publish-release
 Automatically Publish a release with a commit message of the following schema: `#RELEASE{major.minor.patch}`, e.g. `#RELEASE1.0.0`.
-You need to put `asdf` and so on.
+You need to put `<!-- CHANGELOG -->` before and after the changelog in your README file for this action to work.
 
+With this setup, the action creates a release with a title of the version, adds a tag with the schema `major_minor_patch` and updates the CHANGELOG.
 
-
-
-
-We've just hit another update. No features are planned so far. [Change this!](https://github.com/BlenderDefender/auto-publish-release/issues/new/choose)
+## Upcoming Version:
 <!-- CHANGELOG -->
 
 <!-- CHANGELOG -->
-
