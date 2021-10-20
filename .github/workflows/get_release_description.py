@@ -33,5 +33,5 @@ for key in data.keys():
 
         # Compose the output.
         output += f"{data[key]} {feature_type}, "
-
-print(f"{output[:-2]}:{content}")
+with open("../release_description.txt", "w+") as f:
+  f.write(f"{output[:-2]}:{content}")
