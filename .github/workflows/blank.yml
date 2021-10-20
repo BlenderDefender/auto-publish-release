@@ -31,7 +31,7 @@ jobs:
         run: |
           message=${{ github.event.head_commit.message }}
           
-          echo "::set-output name=RELEASE_DESCRIPTION::$(python ./.github/workflows/get_release_description.py)"
+          echo "::set-output name=RELEASE_TITLE::$(python ./.github/workflows/get_release_title.py)"
           echo "::set-output name=VERSION::$(python ./.github/workflows/publish_release.py --commit_message $message)"
           
       - name: Update CHANGELOG ⏱
@@ -48,7 +48,7 @@ jobs:
         with:
           tag_name: ${{ steps.prepare_release.outputs.VERSION }}
           body_path: ../release_description.txt
-          release_name: ${{ steps.prepare_release.outputs.VERSION }}
+          release_name: ${{ steps.prepare_release.outputs.RELEASE_TITLE }}
           draft: true
           commitish: master
           
