@@ -40,14 +40,36 @@ jobs:
         with:
           commit_message: Update CHANGELOG.md
           
-      - name: Create Release
-        id: create_release
+      - name: Draft Release
+        id: draft_release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ steps.prepare_release.outputs.VERSION }}
-          body: ${{ steps.prepare_release.outputs.RELEASE_DESCRIPTION }}
+          body: |
+            ${{ steps.prepare_release.outputs.RELEASE_DESCRIPTION }}
           release_name: ${{ steps.prepare_release.outputs.VERSION }}
           draft: true
+          commitish: master
+          
+      - name: Create Package 📦
+        id: create_package
+        run: |
+          dir=$(basename $(pwd))
+          cd ..
+          zip $dir.zip -r $dir
+          echo "::set-output name=ZIP_DIR::../$dir.zip"
+          echo "::set-output name=ZIP::$dir.zip"
+
+      - name: Upload Package 📦
+        uses: actions/upload-release-asset@v1.0.1
+        env:
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+         upload_url: ${{ steps.draft_release.outputs.upload_url }}
+         asset_path: ${{ steps.create_package.outputs.ZIP_DIR }}
+         asset_name: ${{ steps.create_package.outputs.ZIP }}
+         asset_content_type: application/zip
+
 
