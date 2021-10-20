@@ -32,8 +32,8 @@ jobs:
 
           operation_output=$(python ./.github/workflows/publish_release.py --commit_message $message)
 
-          VERSION=$(cut -d'|' -f2 <<<"$operation_output")
-          RELEASE_DESC=$(cut -d'|' -f3 <<<"$operation_output")
+          VERSION=$(cut -d '|' -f2 <<<"$operation_output")
+          RELEASE_DESC=$(cut -d '|' -f3 <<<"$operation_output")
           echo $VERSION
         # echo $RELEASE_DESC
         # echo "test\nasdf"
