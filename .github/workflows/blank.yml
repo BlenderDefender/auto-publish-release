@@ -35,9 +35,10 @@ jobs:
           repo_url=${{ github.repository }}
           include_issue_notice=${{ env.include_issue_notice }}
           python ./.github/workflows/get_release_description.py
+
           
           echo "::set-output name=RELEASE_TITLE::$(python ./.github/workflows/get_release_title.py --commit_message $message)"
-          echo "::set-output name=VERSION::$(python ./.github/workflows/prepare_release.py --commit_message $message) --repo_url $repo_url --include_issue_notice include_issue_notice"
+          echo "::set-output name=VERSION::$(python ./.github/workflows/prepare_release.py --commit_message $message) --repo_url $repo_url --include_issue_notice $include_issue_notice"
           
       - name: Update CHANGELOG ⏱
         uses: stefanzweifel/git-auto-commit-action@v4
