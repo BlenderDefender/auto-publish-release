@@ -3,10 +3,9 @@ Automatically Publish a release with a commit message of the following schema: `
 You need to put ``
 
 
+
+We've just hit another update. No features are planned so far. [Change this!](https://github.com/BlenderDefender/auto-publish-release/issues/new/choose)
 <!-- CHANGELOG -->
-- Feature: adfasd
-- Fix: lajsdfljasdljfas
-- aasldfj
-- Feature: jpofoqwerudmf
+
 <!-- CHANGELOG -->
 

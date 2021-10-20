@@ -1,3 +1,11 @@
+## Version 2.0.3
+
+- Feature: adfasd
+- Fix: lajsdfljasdljfas
+- aasldfj
+- Feature: jpofoqwerudmf
+
+
 ## Version 2.0.2
 
 
@@ -14,6 +22,7 @@
 With this setup, the action creates a release with a title of the version, adds a tag with the schema `major_minor_patch` and updates the CHANGELOG.
 
 ## Upcoming Version:
+
 
 
 
