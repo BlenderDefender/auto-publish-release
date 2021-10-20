@@ -1,3 +1,9 @@
+## Version 1.3.0
+
+- Feature: amazing features ahead
+- Fix: the other amazing feature didn't work.
+
+
 ## Version 1.2.0
 
 - Feature: Test
@@ -80,6 +86,7 @@
 
 - Feature: Test
 - Fix: Hello
+
 
 
 
