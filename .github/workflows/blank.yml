@@ -30,8 +30,9 @@ jobs:
         id: prepare_release
         run: |
           message=${{ github.event.head_commit.message }}
+          python ./.github/workflows/get_release_description.py
           
-          echo "::set-output name=RELEASE_TITLE::$(python ./.github/workflows/get_release_title.py)"
+          echo "::set-output name=RELEASE_TITLE::$(python ./.github/workflows/get_release_title.py --commit_message $message)"
           echo "::set-output name=VERSION::$(python ./.github/workflows/publish_release.py --commit_message $message)"
           
       - name: Update CHANGELOG ⏱
