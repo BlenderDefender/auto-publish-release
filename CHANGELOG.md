@@ -1,3 +1,9 @@
+## Version 1.2.0
+
+- Feature: Test
+- Fix: Hello
+
+
 ## Version 0.1.3
 
 - Feature: Test
@@ -74,6 +80,7 @@
 
 - Feature: Test
 - Fix: Hello
+
 
 
 
