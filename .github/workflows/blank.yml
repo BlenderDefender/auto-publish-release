@@ -49,5 +49,5 @@ jobs:
           tag_name: ${{ steps.prepare_release.outputs.VERSION }}
           body: ${{ steps.prepare_release.outputs.RELEASE_DESCRIPTION }}
           release_name: ${{ steps.prepare_release.outputs.VERSION }}
-        #  draft: true
+          draft: true
 
