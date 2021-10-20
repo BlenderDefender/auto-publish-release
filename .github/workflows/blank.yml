@@ -34,9 +34,18 @@ jobs:
           RELEASE_DESCRIPTION=$(python ./.github/workflows/get_release_description.py)
           VERSION=$(python ./.github/workflows/publish_release.py --commit_message $message)
           
-      - name: Update CHANGELOG
+      - name: Update CHANGELOG ⏱
         uses: stefanzweifel/git-auto-commit-action@v4
         id: update_changelog
         with:
           commit_message: Update CHANGELOG.md
+          
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        with:
+          tag_name: ${{ steps.prepare_release.outputs.VERSION }}
+          body: ${{ steps.prepare_release.outputs.RELEASE_DESCRIPTION }}
+          release_name: ${{ steps.prepare_release.outputs.VERSION }}
+        #  draft: true
 
