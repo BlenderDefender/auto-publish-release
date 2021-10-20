@@ -29,7 +29,7 @@ jobs:
       - name: Prepare Release 🧪
         id: prepare_release
         env:
-          include_issue_notice: true
+          include_issue_notice: false
         run: |
           message=${{ github.event.head_commit.message }}
           repo_url=${{ github.repository }}
