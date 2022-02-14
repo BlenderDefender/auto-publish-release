@@ -4,9 +4,9 @@ name: Auto publish release
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the master branch
+  # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ master ]
+    branches: [ main ]
 
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -56,7 +56,7 @@ jobs:
           body_path: ../release_description.txt
           release_name: ${{ steps.prepare_release.outputs.RELEASE_TITLE }}
           draft: true
-          commitish: master
+          commitish: main
           
       - name: Create Package 📦
         id: create_package
